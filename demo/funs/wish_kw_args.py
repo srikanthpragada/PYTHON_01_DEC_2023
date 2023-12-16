@@ -4,3 +4,4 @@ def wish(user, message):
 
 wish('Bill', 'Hi')  # positional
 wish(message="Hello", user="Larry")  # keyword
+wish(message="Hello")  # keyword
