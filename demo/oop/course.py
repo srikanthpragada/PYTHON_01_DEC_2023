@@ -1,4 +1,11 @@
 class Course:
+    # class attribute or static attribute
+    taxrate = 12
+
+    @staticmethod
+    def settaxrate(newrate):
+        Course.taxrate = newrate
+
     # Constructor
     def __init__(self, title, duration=36, fee=5000):
         # Object attributes
@@ -8,7 +15,7 @@ class Course:
 
     # Methods
     def getnetfee(self):
-        return self.fee + self.fee * 12 // 100
+        return self.fee + self.fee * Course.taxrate // 100
 
     def setduration(self, duration):
         self.duration = duration
@@ -19,9 +26,12 @@ class Course:
         print('Fee      : ', self.fee)
 
 
+Course.settaxrate(15)  # invoke static method using classname
 # create objects
-c1 = Course("Java SE")    # invoke  __init__()
-c1.show()
+c1 = Course("Java SE")  # invoke  __init__()
+c1.show()  # invoke method
+
+
 print(c1.getnetfee())
 c1.setduration(40)
 
