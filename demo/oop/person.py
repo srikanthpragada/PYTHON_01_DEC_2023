@@ -4,6 +4,9 @@ class Person:
         # private member
         self.__mobile = mobile
 
+    def show(self):
+        print("Name   : ", self.name)
+        print("Mobile : ", self.__mobile)
 
 
 p1 = Person("Jack", "99292922")

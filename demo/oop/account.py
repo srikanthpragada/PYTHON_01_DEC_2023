@@ -25,10 +25,14 @@ class SavingsAccount:
     def show(self):
         print(self.acno, self.ahname, self.balance)
 
+    @property
+    def currentbalance(self):
+        return self.balance
+
 
 s1 = SavingsAccount(1, "Mark", 50000)
 s2 = SavingsAccount(2, "Scott")
 
 s1.deposit(10000)
 s1.withdraw(55000)
-print(s1.getbalance())
+print(s1.currentbalance)  # access a property

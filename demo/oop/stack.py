@@ -14,6 +14,7 @@ class Stack:
     def clear(self):
         self.data.clear()
 
+    @property
     def length(self):
         return len(self.data)
 
@@ -22,7 +23,7 @@ s = Stack()
 s.push(10)
 s.push(20)
 print(s.pop())
-print(s.length())
+print(s.length)
 
 
 
