@@ -35,8 +35,7 @@ v = int(p1)  # p1.__int__()
 
 players = [Player("First", 20),
            Player("Second", 40),
-           Player("Third",25)]
+           Player("Third", 25)]
 
-for p in sorted(players):
+for p in sorted(players, key=lambda p: p.name):
     print(p)
-
