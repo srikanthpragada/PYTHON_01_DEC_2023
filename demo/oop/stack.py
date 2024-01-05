@@ -6,6 +6,9 @@ class Stack:
         self.data.append(value)
 
     def pop(self):
+        if len(self.data) == 0:
+            raise Exception('Stack is empty!')
+
         return self.data.pop()
 
     def peek(self):
@@ -25,5 +28,5 @@ s.push(20)
 print(s.pop())
 print(s.length)
 
-
-
+for v in s:
+    print(v)

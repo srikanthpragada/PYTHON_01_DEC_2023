@@ -1,3 +1,11 @@
+class FundsError(Exception):
+    def __init__(self, balance, amount):
+        self.msg = f"Insufficient balance {balance} for amount {amount}"
+
+    def __str__(self):
+        return self.msg
+
+
 class SavingsAccount:
     minbal = 10000
 
@@ -17,7 +25,7 @@ class SavingsAccount:
         if self.balance - SavingsAccount.minbal >= amount:
             self.balance -= amount
         else:
-            print('Insufficient Funds')
+            raise FundsError(self.balance - SavingsAccount.minbal, amount)
 
     def getbalance(self):
         return self.balance
@@ -34,5 +42,9 @@ s1 = SavingsAccount(1, "Mark", 50000)
 s2 = SavingsAccount(2, "Scott")
 
 s1.deposit(10000)
-s1.withdraw(55000)
+try:
+    s1.withdraw(55000)
+except FundsError as ex:
+    print(ex)
+
 print(s1.currentbalance)  # access a property
