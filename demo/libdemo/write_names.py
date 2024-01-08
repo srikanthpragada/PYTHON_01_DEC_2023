@@ -1,10 +1,10 @@
 
-f = open("names.txt", "wt")
+with open("names.txt", "wt") as f:
+    names = ['Java', "JavaScript", "Python", 'C#', 'SQL']
 
-names = ['Java', "JavaScript", "Python", 'C#', 'SQL']
+    for n in names:
+        f.write(n + "\n")
 
-for n in names:
-    f.write(n + "\n")
 
-f.close()
+
 
